@@ -13,6 +13,8 @@ public class MouseLook : MonoBehaviour
     Ray forwardRay;
     public Transform previewCube;
 
+    public GameObject cube1Prefab;
+
     public TextMeshProUGUI xAngleTextUI;
     public TextMeshProUGUI yAngleTextUI;
     public TextMeshProUGUI zAngleTextUI;
@@ -39,16 +41,26 @@ public class MouseLook : MonoBehaviour
         // Preview Cube
         forwardRay = new Ray(transform.position, transform.forward);
 
-        if (Physics.Raycast(forwardRay, out hit) && Input.GetMouseButton(0))
+        if (Physics.Raycast(forwardRay, out hit))
         {
+
             xAngleTextUI.text = "X: " + (int)hit.normal.x;
             yAngleTextUI.text = "Y: " + (int)hit.normal.y;
             zAngleTextUI.text = "Z: " + (int)hit.normal.z;
 
-            Debug.Log(hit.point.ToString());
-            previewCube.position = new Vector3( (Mathf.Round(hit.point.x / 0.2f) * 0.2f) + ((int)hit.normal.x * previewCube.transform.localScale.x / 2), 
-                                                (Mathf.Round(hit.point.y / 0.2f) * 0.2f) + ((int)hit.normal.y * previewCube.transform.localScale.y / 2), 
-                                                (Mathf.Round(hit.point.z / 0.2f) * 0.2f) + ((int)hit.normal.z * previewCube.transform.localScale.z / 2));
+            Debug.Log(hit.collider.tag);
+            previewCube.position = new Vector3((Mathf.Round(hit.point.x / 0.2f) * 0.2f) + ((int)hit.normal.x * previewCube.transform.localScale.x / 2),
+                                               (Mathf.Round(hit.point.y / 0.2f) * 0.2f) + ((int)hit.normal.y * previewCube.transform.localScale.y / 2),
+                                               (Mathf.Round(hit.point.z / 0.2f) * 0.2f) + ((int)hit.normal.z * previewCube.transform.localScale.z / 2));
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                Instantiate(cube1Prefab, previewCube);
+            }
+            else if (Input.GetMouseButtonDown(1) && hit.collider.CompareTag("Cube"))
+            {
+                Destroy(hit.transform.gameObject);
+            }
         }
     }
 }

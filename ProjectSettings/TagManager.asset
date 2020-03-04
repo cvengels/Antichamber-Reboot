@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - PreviewCube
+  - Cube
+  - Enemy
+  - LevelCollider
   layers:
   - Default
   - TransparentFX
