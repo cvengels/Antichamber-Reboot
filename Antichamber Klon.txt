@@ -1,0 +1,12 @@
+Antichamber Nachbau:
+
+- Portal-ähnliche Waffe
+
+- Position des zu setzenden Würfels wird durch Drahtgittermodell auf geeigneten Oberflächen dargestellt
+
+- Würfel können:
+	- aufgesogen werden
+	- im Level bewegt werden
+	- in späteren Variationen als komplette Flächen erschaffen werden
+	
+- Bildet man aus Würfeln einen leeren Rahmen, füllt sich dieser mit neuen Würfeln auf
