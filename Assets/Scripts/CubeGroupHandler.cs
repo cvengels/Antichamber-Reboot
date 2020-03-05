@@ -2,9 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SetCube : MonoBehaviour
+public class CubeGroupHandler : MonoBehaviour
 {
-    public GameObject cube1Prefab;
+    [SerializeField]
+    int totalCubes { get; }
+    [SerializeField]
+    int cubeGroups { get; }
+
+    //private List<Cube>;
     // Start is called before the first frame update
     void Start()
     {
