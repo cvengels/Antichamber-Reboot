@@ -1407,7 +1407,7 @@ MonoBehaviour:
   mouseSensitivity: 4
   playerBody: {fileID: 955651144}
   previewCube: {fileID: 1146658602}
-  cube1Prefab: {fileID: 4613021470950749010, guid: 143b4fc7e21506542b9b2f25bdc2fee6,
+  cube1Prefab: {fileID: 8951527007740069571, guid: ecebb46b71b9ed342b394decc54346c0,
     type: 3}
   xAngleTextUI: {fileID: 357737699}
   yAngleTextUI: {fileID: 834617331}

@@ -55,9 +55,9 @@ public class MouseLook : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0))
             {
-                Instantiate(cube1Prefab, previewCube);
+                Instantiate(cube1Prefab, previewCube.position, Quaternion.identity);
             }
-            else if (Input.GetMouseButtonDown(1) && hit.collider.CompareTag("Cube"))
+            if (Input.GetMouseButtonDown(1) && hit.collider.CompareTag("Cube"))
             {
                 Destroy(hit.transform.gameObject);
             }
